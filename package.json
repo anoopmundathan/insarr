@@ -4,13 +4,15 @@
   "description": "Insert an item into array",
   "main": "build/index.js",
   "scripts": {
+    "pretest": "eslint src",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "build": "babel src -d build"
-    
+    "build": "npm test && babel src -d build",
+    "dev": "watch 'npm run build' src"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "babel-cli": "6.24.1",
     "babel-preset-env": "1.6.0",
-    "jest": "20.0.4"
+    "jest": "20.0.4",
+    "watch": "1.0.2"
   }
 }
